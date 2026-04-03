@@ -13,7 +13,7 @@ client.connect();
 
 const server = http.createServer(async (req, res) => {
   const result = await client.query('SELECT NOW()');
-  res.end(`DB Time: ${result.rows[0].now}`);
+  res.end(`UPDATED: DB Time: ${result.rows[0].now}`);
 });
 
 server.listen(3000, '0.0.0.0', () => {
