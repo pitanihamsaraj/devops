@@ -19,8 +19,8 @@ jobs:
           host: ${{ secrets.EC2_HOST }}
           username: ec2-user
           key: ${{ secrets.EC2_KEY }}
-          # zero down time removed this docker-compose down
           script: |
             cd ~/my-app
             git pull origin main
+            docker-compose down
             docker-compose up -d --build
