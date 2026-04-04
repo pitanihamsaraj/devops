@@ -22,5 +22,5 @@ jobs:
           script: |
             cd ~/my-app
             git pull origin main
-            docker-compose down
+            # redown time comment this docker-compose down
             docker-compose up -d --build

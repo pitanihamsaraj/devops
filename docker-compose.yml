@@ -15,6 +15,8 @@ services:
     build: .
     ports:
       - "3000:3000"
+    # if app crashes auto-restart
+    restart: always
     environment:
       DB_HOST: ${DB_HOST}
       DB_USER: ${DB_USER}
