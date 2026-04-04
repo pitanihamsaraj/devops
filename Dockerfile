@@ -1,17 +1,10 @@
-# Stage 1: Build
-FROM node:18 AS builder
+FROM node:18
 
 WORKDIR /app
-COPY package*.json ./
-RUN npm install
 
 COPY . .
 
-# Stage 2: Run (lightweight)
-FROM node:18-alpine
-
-WORKDIR /app
-COPY --from=builder /app .
+RUN npm install
 
 EXPOSE 3000
 
